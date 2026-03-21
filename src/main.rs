@@ -5,7 +5,7 @@ use rand::RngExt;
 
 fn main() {
     println!("Guess the number to be rewarded as Genius.");
-    
+
     println!("Please input your guess: ");
     let mut user_guess: String = String::new();
     io::stdin()
