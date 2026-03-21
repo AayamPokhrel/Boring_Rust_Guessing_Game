@@ -11,7 +11,8 @@ fn main() {
     io::stdin()
         .read_line(&mut user_guess)
         .expect("Failed to read user input");
-    let real_generated_number: i64 = rand::rng().random_range(1..=100);
+    let real_generated_number: u8 = rand::rng().random_range(1..=100);
+    let user_guess: u8 = user_guess.trim().parse().expect("Failed to parse!");
     println!("Generated number: {real_generated_number}");
     println!("You guessed {user_guess}");
 }
