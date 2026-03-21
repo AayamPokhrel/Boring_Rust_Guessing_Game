@@ -18,8 +18,6 @@ fn main() {
 
     let real_generated_number: u8 = rand::rng().random_range(1..=100);
     let user_guess: u8 = user_guess.trim().parse().expect("Failed to parse!");
-
-    println!("Generated number: {real_generated_number}");
     println!("You guessed {user_guess}");
 
     match user_guess.cmp(&real_generated_number) {
