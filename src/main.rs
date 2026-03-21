@@ -1,5 +1,7 @@
 //import standard I/O library
 use std::io;
+// inport rand library
+use rand::RngExt;
 
 fn main() {
     println!("Guess the number to be rewarded as Genius.");
@@ -9,6 +11,7 @@ fn main() {
     io::stdin()
         .read_line(&mut user_guess)
         .expect("Failed to read user input");
-    
+    let real_generated_number: i64 = rand::rng().random_range(1..=100);
+    println!("Generated number: {real_generated_number}");
     println!("You guessed {user_guess}");
 }
