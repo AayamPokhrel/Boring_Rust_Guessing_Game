@@ -1,6 +1,6 @@
 //import standard I/O library
 use std::io;
-// inport rand library
+// import rand library
 use rand::RngExt;
 
 //import compare ordering
