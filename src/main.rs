@@ -22,7 +22,7 @@ fn main() {
     println!("Generated number: {real_generated_number}");
     println!("You guessed {user_guess}");
 
-    match user_guess.cmp(&real_generated_number){
+    match user_guess.cmp(&real_generated_number) {
         Ordering::Equal => println!("You won! You are officially genius."),
         Ordering::Less => println!("Try hard genius, your guess is too small."),
         Ordering::Greater => println!("Try hard genius, your guess is too big."),
