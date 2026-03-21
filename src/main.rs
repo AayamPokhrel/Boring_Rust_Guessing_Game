@@ -1,4 +1,4 @@
-//use standard I/O library
+//import standard I/O library
 use std::io;
 
 fn main() {
