@@ -7,11 +7,16 @@ use rand::RngExt;
 use std::cmp::Ordering;
 
 fn main() {
+
+    println!("Welcome to Multi-Game Boring showdown....");
+    println!("Now, choose an option, which game would you like to play?");
+    let mut user_game_choice: u8;
+    println!("1. Guessing game (1-100)");
     println!("Guess the number to be rewarded as Genius.");
 
     let real_generated_number: u8 = rand::rng().random_range(1..=100);
     loop {
-        println!("Please input your guess: ");
+        println!("Please input your guess(1-100): ");
         let mut user_guess: String = String::new();
 
         io::stdin()
