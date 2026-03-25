@@ -50,9 +50,10 @@ fn main() {
     }
     },
     Ok(2) => {
+    loop{
     let play_randomness:u16 = ramd::rng().random_range(1..=1000);
     let mut play:u8;
-    println!("---Scissors, Paper, Rock");
+    println!("---Scissors, Paper, Rock---");
     println!("Beat the randomness and you'll be untouchable by fate!");
     if(play_randomness<=1000){
         play=1; //Scissors
@@ -75,13 +76,62 @@ fn main() {
         
         if(user_play==1){
         println!("You choose Scissors.");
-        println!("AI(Aayam Intelligence choose 
+        println!("AI (Aayam Intelligence) choose {play_name}.");
     }
     else if(user_play==2){
         println!("You choose Paper.");
+        println!("AI (Aayam Intelligence) choose {play_name}.");
     }
     else if(user_play==3){
         println!("You choose Rock.");
+        println!("AI (Aayam Intelligence) choose {play_name}.");
     }
+    
+    //Decision if else if run :) idk if rust has switch so if-switch would've been easier
+    /* 
+    |----------Decision logic-----------|    
+    |   AI  |   Player  |   Decision    |
+    |   1   |   =1      |   eq          |
+    |   1   |   <2      |   AI          |
+    |   1   |   <3      |   Player      |
+    |   2   |   >1      |   Player      |
+    |   2   |   =2      |   eq          |
+    |   2   |   <3      |   AI          |
+    |   3   |   >1      |   AI          |
+    |   3   |   >2      |   Player      |
+    |   3   |   =3      |   eq          |
+    _____________________________________
+    */
+    if(play==user_play){
+    println!("Tie Occured! You cannot exit till you win, play again!");
+    }
+    else if(play<user_play){
+    println!("You won! Play Again?");
+    println!("Press 1 to play again or 0 to exit");
+        let mut exit_or_play:u8;
+        io::stdin()
+            .read_line(&mut exit_or_play);
+            .expect("Failed to read user data");
+        if(exit_or_play==1)
+        {
+            continue;
+        }
+        else if(exit_or_play==0){
+        break;
+        }
+        else{
+        println!("Enter valid input, Crashed..."); // Will set input handleling later
+        }
+        }
+    else if (user_play ==1 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    }
+    else if (user_play ==2 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    }
+    else if (user_play ==3 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    }
+}
 }
 }
