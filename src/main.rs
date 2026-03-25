@@ -122,7 +122,7 @@ fn main() {
     println!("Press 1 to play again or 0 to exit");
         let mut exit_or_play:u8;
         io::stdin()
-            .read_line(&mut exit_or_play);
+            .read_line(&mut exit_or_play)
             .expect("Failed to read user data");
         if(exit_or_play==1)
         {
