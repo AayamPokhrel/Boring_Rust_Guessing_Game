@@ -47,8 +47,8 @@ fn main() {
             Ordering::Less => println!("Try hard genius, your guess is too small."),
             Ordering::Greater => println!("Try hard genius, your guess is too big."),
         }
-    }
-    },
+    } //Guess game loop
+    }, // Guess game match
     Ok(2) => {
     loop{
     let play_randomness:u16 = ramd::rng().random_range(1..=1000);
@@ -105,7 +105,19 @@ fn main() {
     if(play==user_play){
     println!("Tie Occured! You cannot exit till you win, play again!");
     }
-    else if(play<user_play){
+    else if (user_play ==1 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    continue;
+    }
+    else if (user_play ==2 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    continue;
+    }
+    else if (user_play ==3 && play < user_play){
+    println!("AI Won! Play again, Until you win");
+    continue;
+    }
+    else{
     println!("You won! Play Again?");
     println!("Press 1 to play again or 0 to exit");
         let mut exit_or_play:u8;
@@ -122,16 +134,9 @@ fn main() {
         else{
         println!("Enter valid input, Crashed..."); // Will set input handleling later
         }
-        }
-    else if (user_play ==1 && play < user_play){
-    println!("AI Won! Play again, Until you win");
     }
-    else if (user_play ==2 && play < user_play){
-    println!("AI Won! Play again, Until you win");
-    }
-    else if (user_play ==3 && play < user_play){
-    println!("AI Won! Play again, Until you win");
-    }
-}
-}
-}
+    
+} // SPR loop
+} // SPR match
+} // match first
+} // main
