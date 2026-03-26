@@ -16,7 +16,7 @@ fn main() {
         .read_line(&mut user_game_choice)
         .expect("Failed to read user input");
     match user_game_choice {
-        Ok(1) => {
+        1 => {
             println!("---Guessing Game---");
             println!("Guess the number to be rewarded as Genius.");
 
@@ -50,9 +50,9 @@ fn main() {
                 }
             } //Guess game loop
         } // Guess game match
-        Ok(2) => {
+        2 => {
             loop {
-                let play_randomness: u16 = rand::rng().random_range(1..=1000);
+                let play_randomness: u16 = rand::rng().random_range(1..=3000);
                 let mut play: u8;
                 println!("---Scissors, Paper, Rock---");
                 println!("Beat the randomness and you'll be untouchable by fate!");
