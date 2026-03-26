@@ -56,15 +56,15 @@ fn main() {
                 let mut play: u8;
                 println!("---Scissors, Paper, Rock---");
                 println!("Beat the randomness and you'll be untouchable by fate!");
-                if (play_randomness <= 1000) {
+                if play_randomness <= 1000 {
                     play = 1; //Scissors
-                    let play_name: String = "Scissors";
-                } else if (play_randomness > 1000 && play_randomness <= 2000) {
+                    let play_name: String = "Scissors".to_string();
+                } else if play_randomness > 1000 && play_randomness <= 2000 {
                     play = 2; //Paper
-                    let play_name: String = "Paper";
+                    let play_name: String = "Paper".to_string();
                 } else {
                     play = 3; //Rock
-                    let play_name: String = "Rock";
+                    let play_name: String = "Rock".to_string();
                 }
                 println!("Now, choose your play.");
                 println!("1. Scissors, 2.Paper, 3.Rock");
@@ -73,13 +73,13 @@ fn main() {
                     .read_line(&mut user_play)
                     .expect("Failed to read user input");
 
-                if (user_play == 1) {
+                if user_play == 1 {
                     println!("You choose Scissors.");
                     println!("AI (Aayam Intelligence) choose {play_name}.");
-                } else if (user_play == 2) {
+                } else if user_play == 2 {
                     println!("You choose Paper.");
                     println!("AI (Aayam Intelligence) choose {play_name}.");
-                } else if (user_play == 3) {
+                } else if user_play == 3 {
                     println!("You choose Rock.");
                     println!("AI (Aayam Intelligence) choose {play_name}.");
                 }
@@ -99,15 +99,15 @@ fn main() {
                 |   3   |   =3      |   eq          |
                 _____________________________________
                 */
-                if (play == user_play) {
+                if play == user_play {
                     println!("Tie Occured! You cannot exit till you win, play again!");
-                } else if (user_play == 1 && play < user_play) {
+                } else if user_play == 1 && play < user_play {
                     println!("AI Won! Play again, Until you win");
                     continue;
-                } else if (user_play == 2 && play < user_play) {
+                } else if user_play == 2 && play < user_play {
                     println!("AI Won! Play again, Until you win");
                     continue;
-                } else if (user_play == 3 && play < user_play) {
+                } else if user_play == 3 && play < user_play {
                     println!("AI Won! Play again, Until you win");
                     continue;
                 } else {
@@ -117,9 +117,9 @@ fn main() {
                     io::stdin()
                         .read_line(&mut exit_or_play)
                         .expect("Failed to read user data");
-                    if (exit_or_play == 1) {
+                    if exit_or_play == 1 {
                         continue;
-                    } else if (exit_or_play == 0) {
+                    } else if exit_or_play == 0 {
                         break;
                     } else {
                         println!("Enter valid input, Crashed..."); // Will set input handleling later
