@@ -8,6 +8,13 @@ Run this in your terminal.
 Windows, use installer from here:
 https://forge.rust-lang.org/infra/other-installation-methods.html#which
 
+clone this repo:
+```git clone https://github.com/AayamPokhrel/Boring_Rust_Guessing_Game.git``` 
+
+Go to main directory of the repo:
+```cd Boring_Rust_Guessing_Game```
+
+
 then run,
 ```cargo run```
 Cargo automatically downloads dependcies, compiles code and runs.
