@@ -52,7 +52,7 @@ fn main() {
         } // Guess game match
         Ok(2) => {
             loop {
-                let play_randomness: u16 = ramd::rng().random_range(1..=1000);
+                let play_randomness: u16 = rand::rng().random_range(1..=1000);
                 let mut play: u8;
                 println!("---Scissors, Paper, Rock---");
                 println!("Beat the randomness and you'll be untouchable by fate!");
