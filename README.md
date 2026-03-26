@@ -1,5 +1,6 @@
 This is a unintended, truly non-beneficial to human kind.
 Anyways, learning rust along with some small game logics.
+Starting with basic inputs and ifs, intended to learn and improve code efficiency using functions, matches, less ifs, and use of enums in future.
 
 To play this game, install rust in your hardware from:
 Linux/MacOS/Unix based:
