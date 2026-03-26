@@ -42,7 +42,7 @@ fn main() {
                         Ok(num) => {
                             if num < 1 || num > 100 {
                                 println!("Valid range of input is only between 1 to 100.");
-                                return;
+                                continue;
                             } else {
                                 num
                             }
@@ -51,7 +51,7 @@ fn main() {
                             println!(
                                 "Failed to parse number, please input valid number. Try again genius."
                             );
-                            break;
+                            continue;
                         }
                     };
                     println!("You guessed {user_guess}");
@@ -93,14 +93,14 @@ fn main() {
                         Ok(num) => {
                             if num < 1 || num > 3 {
                                 println!("Please enter valid range of inputs 1 to 3.");
-                                return;
+                                continue;
                             } else {
                                 num
                             }
                         }
                         Err(_) => {
                             println!("Unable to parse to u8.");
-                            break;
+                            continue;
                         }
                     };
                     if user_play == 1 {
@@ -131,16 +131,16 @@ fn main() {
                     */
                     if play == user_play {
                         println!("Tie Occured! You cannot exit till you win, play again!");
-                    } else if user_play == 1 && play == 2 {
+                    } else if play == 1 && user_play == 2
+                        || play == 2 && user_play == 3
+                        || play == 3 && user_play == 1
+                    {
                         println!("AI Won! Play again, Until you win");
                         continue;
-                    } else if user_play == 2 && play == 3 {
-                        println!("AI Won! Play again, Until you win");
-                        continue;
-                    } else if user_play == 3 && play == 1 {
-                        println!("AI Won! Play again, Until you win");
-                        continue;
-                    } else {
+                    } else if user_play == 1 && play == 2
+                        || user_play == 2 && play == 3
+                        || user_play == 3 && play == 1
+                    {
                         println!("You won! Play Again?");
                         println!("Press 1 to play again or 0 to exit");
                         let mut exit_or_play_input: String = String::new();
@@ -151,7 +151,7 @@ fn main() {
                             Ok(num) => num,
                             Err(_) => {
                                 println!("Failed to parse to u8.");
-                                break;
+                                continue;
                             }
                         };
                         if exit_or_play == 1 {
@@ -159,15 +159,18 @@ fn main() {
                         } else if exit_or_play == 0 {
                             break;
                         } else {
-                            println!("Enter valid input, Crashed..."); // Will set input handleling later
+                            println!("Enter valid input, Crashed..."); // Will set inp>
                         }
+                    } else {
+                        println!("Unexpected Occured!");
+                        continue;
                     }
                 } // SPR loop
             } // SPR match
             0 => {
                 println!("Exiting game.");
                 return;
-            }
+            } //exit match
             _ => {
                 println!("Invalid input choose again.");
             } //void match
