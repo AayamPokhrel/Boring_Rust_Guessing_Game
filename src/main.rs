@@ -142,7 +142,7 @@ fn main() {
                         || user_play == 3 && play == 1
                     {
                         println!("You won! Play Again?");
-                        println!("Press 1 to play again or 0 to exit");
+                        println!("Press 2 to play again, 1 to exit to game menu or 0 to exit the entire game.");
                         let mut exit_or_play: String = String::new();
                         io::stdin()
                             .read_line(&mut exit_or_play)
@@ -154,17 +154,25 @@ fn main() {
                                 continue;
                             }
                         };
-                        if exit_or_play == 1 {
-                            continue;
-                        } else if exit_or_play == 0 {
-                            break;
-                        } else {
-                            println!("Enter valid input, Crashed..."); // Will set inp>
-                        }
-                    } else {
-                        println!("Unexpected Occured!");
-                        continue;
-                    }
+                        match exit_or_play {
+                            2=>{
+                                println!("Playing again!");
+                                continue;
+                            }
+                            1=>{
+                                println!("Returning to game menu.");
+                                break;
+                            }
+                            0=>{
+                                println!("Exiting game!");
+                                return;
+                            }
+                            _=>{
+                                println!("Unexpected occured!");
+                                continue;
+                            }
+                        };// exit_or_play match
+                    } //else if
                 } // SPR loop
             } // SPR match
             0 => {
