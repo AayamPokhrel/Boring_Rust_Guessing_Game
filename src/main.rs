@@ -85,11 +85,11 @@ fn main() {
                     }
                     println!("Now, choose your play.");
                     println!("1. Scissors, 2.Paper, 3.Rock");
-                    let mut user_play_input: String = String::new();
+                    let mut user_play: String = String::new();
                     io::stdin()
-                        .read_line(&mut user_play_input)
+                        .read_line(&mut user_play)
                         .expect("Failed to read user input");
-                    let user_play: u8 = match user_play_input.trim().parse() {
+                    let user_play: u8 = match user_play.trim().parse() {
                         Ok(num) => {
                             if num < 1 || num > 3 {
                                 println!("Please enter valid range of inputs 1 to 3.");
@@ -143,11 +143,11 @@ fn main() {
                     {
                         println!("You won! Play Again?");
                         println!("Press 1 to play again or 0 to exit");
-                        let mut exit_or_play_input: String = String::new();
+                        let mut exit_or_play: String = String::new();
                         io::stdin()
-                            .read_line(&mut exit_or_play_input)
+                            .read_line(&mut exit_or_play)
                             .expect("Failed to read user data");
-                        let exit_or_play: u8 = match exit_or_play_input.trim().parse() {
+                        let exit_or_play: u8 = match exit_or_play.trim().parse() {
                             Ok(num) => num,
                             Err(_) => {
                                 println!("Failed to parse to u8.");
