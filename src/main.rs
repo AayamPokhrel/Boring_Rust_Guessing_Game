@@ -1,3 +1,5 @@
+/* Rebase code */
+/*
 //import standard I/O library
 use std::io;
 // import rand library
@@ -185,3 +187,31 @@ fn main() {
         }; // match first
     } //main game loop 1st
 } // main
+*/
+//imports
+use rand::Rng; //random generation lib
+use std::cmp::Ordering; // Compare Ordering lib
+
+fn parse_read=>u8(){ // a function to read user's input and parse it.
+    let user_choice: String= String::new();
+}
+
+fn main(){ // main function where our code starts
+    println!("");
+    println!("-----> MegaMind Games <-----");
+    println!("");
+    println!("Please choose a game you would like to play!");
+    println!("1.Guessing game (From 1 to 100).");
+    println!("2.Scissors, Paper, Rock.");
+    println!("0. Exit game.");
+    println!("");
+    println!("Input your choice: ");
+    let menu_choice: u8 = parse_read();
+}
+
+fn guess_game(){ //Guessing game function
+
+}
+fn scissors_paper_rock(){ // Scissors, Paper, Rock function
+    
+}
