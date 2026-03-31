@@ -192,11 +192,24 @@ fn main() {
 use rand::Rng; //random generation lib
 use std::cmp::Ordering; // Compare Ordering lib
 
-fn parse_read=>u8(){ // a function to read user's input and parse it.
-    let user_choice: String= String::new();
+fn parse_read() -> u8 {
+    // a function to read user's input and parse it.
+    let mut user_choice: String = String::new();
+    std::io::stdin()
+        .read_line(&mut user_choice)
+        .expect("Failed to read user data.");
+    let user_choice: u8 = match user_choice.trim().parse() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("Failed to parse the number.");
+            0 //fallback value for u8
+        }
+    };
+    return user_choice;
 }
 
-fn main(){ // main function where our code starts
+fn main() {
+    // main function where our code starts
     println!("");
     println!("-----> MegaMind Games <-----");
     println!("");
@@ -207,11 +220,13 @@ fn main(){ // main function where our code starts
     println!("");
     println!("Input your choice: ");
     let menu_choice: u8 = parse_read();
-}
 
+}
+/*
 fn guess_game(){ //Guessing game function
 
 }
 fn scissors_paper_rock(){ // Scissors, Paper, Rock function
-    
+
 }
+*/
